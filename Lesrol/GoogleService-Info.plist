@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>186466307771-99uqgpdkqmhog9oqcph42326tinectd7.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.186466307771-99uqgpdkqmhog9oqcph42326tinectd7</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAVPIPzz-3TAWHqkmG-NTushsIY6kiL-0M</string>
+	<key>GCM_SENDER_ID</key>
+	<string>186466307771</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.edvinlellhame.Lesrol</string>
+	<key>PROJECT_ID</key>
+	<string>lesrol-684f9</string>
+	<key>STORAGE_BUCKET</key>
+	<string>lesrol-684f9.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:186466307771:ios:8d58f6dae6fe25896ae39e</string>
+	<key>DATABASE_URL</key>
+	<string>https://lesrol-684f9.firebaseio.com</string>
+</dict>
+</plist>
