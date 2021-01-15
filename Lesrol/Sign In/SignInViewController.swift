@@ -34,16 +34,16 @@ class SignInViewController: UIViewController {
     private func setTargets() {
         /// Submit Button
 //        let submitButtonGesture = UITapGestureRecognizer(target: self, action: #selector(submitButtonPressed))
-//        signInView.submitButton.addGestureRecognizer(submitButtonGesture)
-//        
-//        /// Sign In Button
+        signInView.signinButton.addTarget(self, action: #selector(submitButtonPressed), for: .touchUpInside)
+        
+        /// Sign In Button
 //        signInView.signUpButton.addTarget(self, action: #selector(signInButtonPressed), for: .touchUpInside)
-//        
-//        /// Email TextField
-//        signInView.emailTextField.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
-//        
-//        /// Password TextField
-//        signInView.passwordTextField.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
+        
+        /// Email TextField
+        signInView.emailTextField.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
+        
+        /// Password TextField
+        signInView.passwordTextField.addTarget(self, action: #selector(handleTextInputChange), for: .editingChanged)
     }
     
     // MARK: Targets
@@ -60,24 +60,23 @@ class SignInViewController: UIViewController {
     }
     
     @objc private func submitButtonPressed() {
-        /// Show and start the activity indicator.
         signInView.activityIndicator.startActivitySpinner(flag: true)
-        /// Log the user in
-//        FirebaseLayer.login(withEmail: signInView.emailTextField.text ?? "", password: signInView.passwordTextField.text ?? "") { (success, errorString) in
-//
-//            if success {
-//                /// Present the main page if successful sign in.
-//                let mainTabBar = MainTabBarController()
-//                mainTabBar.modalPresentationStyle = .fullScreen
-//                self.present(mainTabBar, animated: true, completion: nil)
-//            } else {
-//                /// Present the user with the error message.
-//                self.signInView.errorMessageLabel.text = errorString!
-//            }
-//
-//            /// Hide and stop the activity indicator.
-//            self.signInView.activityIndicator.startActivitySpinner(flag: false)
-//        }
+        
+        FirebaseLayer.login(withEmail: signInView.emailTextField.text ?? "", password: signInView.passwordTextField.text ?? "") { (success, errorString) in
+
+            if success {
+                /// Present the main page if successful sign in.
+                let mainTabBar = MainTabBarController()
+                mainTabBar.modalPresentationStyle = .fullScreen
+                self.present(mainTabBar, animated: true, completion: nil)
+            } else {
+                /// Present the user with the error message.
+                self.signInView.errorMessageLabel.text = errorString!
+            }
+
+            /// Hide and stop the activity indicator.
+            self.signInView.activityIndicator.startActivitySpinner(flag: false)
+        }
     }
     
     /// Validate the text fields.

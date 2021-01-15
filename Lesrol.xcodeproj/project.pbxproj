@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06063F0F25083F76007EFF0F /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06063F0E25083F76007EFF0F /* ActivityCell.swift */; };
+		06063F1225085320007EFF0F /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06063F1125085320007EFF0F /* DayCell.swift */; };
+		06063F1C2509CBCB007EFF0F /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06063F1B2509CBCB007EFF0F /* ProfileView.swift */; };
 		065F263D24D7E60D00EFB0B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065F263C24D7E60D00EFB0B4 /* AppDelegate.swift */; };
 		065F263F24D7E60D00EFB0B4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065F263E24D7E60D00EFB0B4 /* SceneDelegate.swift */; };
 		065F264124D7E60D00EFB0B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065F264024D7E60D00EFB0B4 /* ViewController.swift */; };
@@ -51,6 +54,7 @@
 		065F26A824D88E1300EFB0B4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065F26A724D88E1300EFB0B4 /* ProfileViewController.swift */; };
 		065F26AC24D88E4C00EFB0B4 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065F26AA24D88E4B00EFB0B4 /* SearchCell.swift */; };
 		065F26AD24D88E4C00EFB0B4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065F26AB24D88E4B00EFB0B4 /* SearchViewController.swift */; };
+		0660FFD8251A9795008BAAF8 /* PopularDestinationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0660FFD7251A9795008BAAF8 /* PopularDestinationCell.swift */; };
 		06F04DD624D93B25001CD0D8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06F04DD524D93B25001CD0D8 /* GoogleService-Info.plist */; };
 		06F04DD824D93EA0001CD0D8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F04DD724D93EA0001CD0D8 /* HomeView.swift */; };
 		06F04DDD24D94067001CD0D8 /* YourTripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F04DDA24D94066001CD0D8 /* YourTripTableViewCell.swift */; };
@@ -77,10 +81,15 @@
 		06F04E0A24DA1DB5001CD0D8 /* Gilroy-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 06F04DF524DA1DB5001CD0D8 /* Gilroy-Medium.otf */; };
 		06F04E0B24DA1DB5001CD0D8 /* Gilroy-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 06F04DF624DA1DB5001CD0D8 /* Gilroy-Thin.otf */; };
 		06F04E0E24DDF4CA001CD0D8 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F04E0D24DDF4CA001CD0D8 /* ExploreView.swift */; };
+		06F438A82506A54A0092B0C2 /* TripDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F438A72506A54A0092B0C2 /* TripDetailViewController.swift */; };
+		06F438AB2506A5640092B0C2 /* TripDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F438AA2506A5640092B0C2 /* TripDetailView.swift */; };
 		A7489CD0F7A531D5E0EC4844 /* Pods_Lesrol.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA0EE564F193D776180EC287 /* Pods_Lesrol.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		06063F0E25083F76007EFF0F /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
+		06063F1125085320007EFF0F /* DayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
+		06063F1B2509CBCB007EFF0F /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		065F263924D7E60D00EFB0B4 /* Lesrol.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lesrol.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		065F263C24D7E60D00EFB0B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		065F263E24D7E60D00EFB0B4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +136,7 @@
 		065F26A724D88E1300EFB0B4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		065F26AA24D88E4B00EFB0B4 /* SearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		065F26AB24D88E4B00EFB0B4 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		0660FFD7251A9795008BAAF8 /* PopularDestinationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularDestinationCell.swift; sourceTree = "<group>"; };
 		06F04DD524D93B25001CD0D8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		06F04DD724D93EA0001CD0D8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		06F04DDA24D94066001CD0D8 /* YourTripTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YourTripTableViewCell.swift; sourceTree = "<group>"; };
@@ -153,6 +163,8 @@
 		06F04DF524DA1DB5001CD0D8 /* Gilroy-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Medium.otf"; sourceTree = "<group>"; };
 		06F04DF624DA1DB5001CD0D8 /* Gilroy-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Thin.otf"; sourceTree = "<group>"; };
 		06F04E0D24DDF4CA001CD0D8 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
+		06F438A72506A54A0092B0C2 /* TripDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailViewController.swift; sourceTree = "<group>"; };
+		06F438AA2506A5640092B0C2 /* TripDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailView.swift; sourceTree = "<group>"; };
 		24B36476FDF9425957D1917D /* Pods-Lesrol.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lesrol.debug.xcconfig"; path = "Target Support Files/Pods-Lesrol/Pods-Lesrol.debug.xcconfig"; sourceTree = "<group>"; };
 		358899F386E1471427A08618 /* Pods-Lesrol.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lesrol.release.xcconfig"; path = "Target Support Files/Pods-Lesrol/Pods-Lesrol.release.xcconfig"; sourceTree = "<group>"; };
 		FA0EE564F193D776180EC287 /* Pods_Lesrol.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lesrol.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,6 +182,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06063F10250852F8007EFF0F /* Day View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				06063F1125085320007EFF0F /* DayCell.swift */,
+			);
+			path = "Day View Controller";
+			sourceTree = "<group>";
+		};
 		065F263024D7E60D00EFB0B4 = {
 			isa = PBXGroup;
 			children = (
@@ -201,8 +221,8 @@
 				065F268E24D88D7900EFB0B4 /* Main Tab Bar */,
 				065F268324D88D5400EFB0B4 /* Extensions */,
 				065F267824D88D4200EFB0B4 /* View */,
-				065F267324D88D1600EFB0B4 /* Sign Up */,
 				065F265824D88CF300EFB0B4 /* Model */,
+				065F267324D88D1600EFB0B4 /* Sign Up */,
 				065F266E24D88CFF00EFB0B4 /* Sign In */,
 				065F265524D88CEA00EFB0B4 /* Landing */,
 				065F264224D7E60D00EFB0B4 /* Main.storyboard */,
@@ -309,11 +329,12 @@
 		065F269324D88DB200EFB0B4 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				06063F10250852F8007EFF0F /* Day View Controller */,
 				06F04E0C24DDF4B9001CD0D8 /* Explore */,
 				06F04DD924D94025001CD0D8 /* Home */,
-				065F269824D88DF100EFB0B4 /* InboxViewController.swift */,
+				06F438A52506A5100092B0C2 /* Inbox */,
 				065F269A24D88E0300EFB0B4 /* Post */,
-				065F26A724D88E1300EFB0B4 /* ProfileViewController.swift */,
+				06F438A62506A5170092B0C2 /* Profile */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -355,6 +376,14 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
+		0660FFD6251A9768008BAAF8 /* Destination Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0660FFD7251A9795008BAAF8 /* PopularDestinationCell.swift */,
+			);
+			path = "Destination Cell";
+			sourceTree = "<group>";
+		};
 		06F04DD924D94025001CD0D8 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -363,6 +392,7 @@
 				06F04DDC24D94067001CD0D8 /* TripCell.swift */,
 				06F04DDB24D94067001CD0D8 /* YourTripCollectionViewCell.swift */,
 				06F04DDA24D94066001CD0D8 /* YourTripTableViewCell.swift */,
+				06F438A92506A54E0092B0C2 /* Trip Detail */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -397,10 +427,38 @@
 		06F04E0C24DDF4B9001CD0D8 /* Explore */ = {
 			isa = PBXGroup;
 			children = (
+				0660FFD6251A9768008BAAF8 /* Destination Cell */,
 				065F269424D88DDA00EFB0B4 /* ExploreViewController.swift */,
 				06F04E0D24DDF4CA001CD0D8 /* ExploreView.swift */,
 			);
 			path = Explore;
+			sourceTree = "<group>";
+		};
+		06F438A52506A5100092B0C2 /* Inbox */ = {
+			isa = PBXGroup;
+			children = (
+				065F269824D88DF100EFB0B4 /* InboxViewController.swift */,
+			);
+			path = Inbox;
+			sourceTree = "<group>";
+		};
+		06F438A62506A5170092B0C2 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				065F26A724D88E1300EFB0B4 /* ProfileViewController.swift */,
+				06063F1B2509CBCB007EFF0F /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		06F438A92506A54E0092B0C2 /* Trip Detail */ = {
+			isa = PBXGroup;
+			children = (
+				06F438A72506A54A0092B0C2 /* TripDetailViewController.swift */,
+				06F438AA2506A5640092B0C2 /* TripDetailView.swift */,
+				06063F0E25083F76007EFF0F /* ActivityCell.swift */,
+			);
+			path = "Trip Detail";
 			sourceTree = "<group>";
 		};
 		54A797E3AF0D2C599F8CF828 /* Frameworks */ = {
@@ -568,9 +626,11 @@
 				065F266824D88CF300EFB0B4 /* Trip.swift in Sources */,
 				065F268924D88D5400EFB0B4 /* Extension+UIFont.swift in Sources */,
 				065F268D24D88D5400EFB0B4 /* Extension+UIView.swift in Sources */,
+				06063F1225085320007EFF0F /* DayCell.swift in Sources */,
 				065F267724D88D1600EFB0B4 /* SignUpView.swift in Sources */,
 				065F268C24D88D5400EFB0B4 /* Extension+CALayer.swift in Sources */,
 				065F264124D7E60D00EFB0B4 /* ViewController.swift in Sources */,
+				0660FFD8251A9795008BAAF8 /* PopularDestinationCell.swift in Sources */,
 				065F267624D88D1600EFB0B4 /* SignUpViewController.swift in Sources */,
 				06F04DD824D93EA0001CD0D8 /* HomeView.swift in Sources */,
 				065F265424D88C0A00EFB0B4 /* ConstraintAnimation.swift in Sources */,
@@ -588,6 +648,7 @@
 				065F266424D88CF300EFB0B4 /* Attraction.swift in Sources */,
 				06F04E0E24DDF4CA001CD0D8 /* ExploreView.swift in Sources */,
 				065F267F24D88D4200EFB0B4 /* ProfileImageView.swift in Sources */,
+				06063F0F25083F76007EFF0F /* ActivityCell.swift in Sources */,
 				065F26AD24D88E4C00EFB0B4 /* SearchViewController.swift in Sources */,
 				065F26A624D88E0300EFB0B4 /* PostView.swift in Sources */,
 				065F266624D88CF300EFB0B4 /* Chat.swift in Sources */,
@@ -597,11 +658,14 @@
 				065F263F24D7E60D00EFB0B4 /* SceneDelegate.swift in Sources */,
 				065F268124D88D4200EFB0B4 /* ActivityView.swift in Sources */,
 				065F269724D88DE500EFB0B4 /* HomeViewController.swift in Sources */,
+				06063F1C2509CBCB007EFF0F /* ProfileView.swift in Sources */,
 				065F266724D88CF300EFB0B4 /* Comment.swift in Sources */,
 				065F267124D88CFF00EFB0B4 /* SignInView.swift in Sources */,
 				065F26A824D88E1300EFB0B4 /* ProfileViewController.swift in Sources */,
+				06F438AB2506A5640092B0C2 /* TripDetailView.swift in Sources */,
 				065F266524D88CF300EFB0B4 /* Location.swift in Sources */,
 				065F268024D88D4200EFB0B4 /* SectionTitleLabel.swift in Sources */,
+				06F438A82506A54A0092B0C2 /* TripDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -749,6 +813,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z928ALPHEA;
 				INFOPLIST_FILE = Lesrol/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -768,6 +833,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z928ALPHEA;
 				INFOPLIST_FILE = Lesrol/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

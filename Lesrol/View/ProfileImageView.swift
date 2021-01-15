@@ -23,7 +23,7 @@ class ProfileImageView: UIView {
     let label: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.font = UIFont.gilroyBold(ofSize: 18)
+        label.font = UIFont.gilroyBold(ofSize: 10)
         label.minimumScaleFactor = 0.1
         label.textAlignment = .center
         label.adjustsFontSizeToFitWidth = true

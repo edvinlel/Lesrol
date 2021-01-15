@@ -40,5 +40,8 @@ extension UIColor {
         
         /// Ratings yellow
         static var ratingYellow: UIColor { return UIColor.rgb(red: 224, green: 184, blue: 112) }
+        
+        /// Main black
+        static var mainBlack: UIColor { return UIColor.rgb(red: 31, green: 31, blue: 31) }
     }
 }

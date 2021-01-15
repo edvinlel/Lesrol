@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Landing Screen.png",
+      "filename" : "Chat.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "@2xLanding Screen.png",
+      "filename" : "@2xChat.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "@3xLanding Screen.png",
+      "filename" : "@3xChat.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

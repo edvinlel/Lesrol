@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "Point + Oval 3 + Oval 4 Mask.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "@2xPoint + Oval 3 + Oval 4 Mask.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "@3xPoint + Oval 3 + Oval 4 Mask.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

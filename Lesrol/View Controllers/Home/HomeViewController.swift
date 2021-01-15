@@ -29,6 +29,8 @@ class HomeViewController: UIViewController {
         homeView.tableView.delegate = self
         homeView.tableView.dataSource = self
         
+        homeView.compassImage.addTarget(self, action: #selector(compassButtonPressed), for: .touchUpInside)
+        
         // Dummy Data
         edvin = User(email: "", password: "", dateCreated: "", followers: [], username: "Edvin Lellhame", profileImage: UIImage(named: "edvin")!)
         joey = User(email: "test@gmail.com", password: "", dateCreated: "", followers: [], username: "Joey Perera", profileImage: UIImage(named: "joey")!)
@@ -51,9 +53,12 @@ class HomeViewController: UIViewController {
         super.viewWillAppear(animated)
         
         navigationController?.navigationBar.isHidden = true
+        tabBarController?.tabBar.isHidden = false
     }
 
-    
+    @objc func compassButtonPressed() {
+        print("HIIIIIIII")
+    }
 
 }
 
@@ -105,6 +110,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         case 1:
             let invitedTrip = jordan.createdTrips[indexPath.row]
             trip = invitedTrip
+            let detailTrip = TripDetailViewController()
+            navigationController?.pushViewController(detailTrip, animated: true)
         default:
             fatalError()
         }

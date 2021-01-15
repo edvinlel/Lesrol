@@ -67,5 +67,7 @@
 		<string>Gilroy-Light.otf</string>
 		<string>Gilroy-Medium.otf</string>
 	</array>
+	<key>MGLMapboxAccessToken</key>
+	<string>pk.eyJ1IjoiZWR2aW5sZWwiLCJhIjoiY2tkOWNmMXowMDE1bTM0dDFmaWNnaWtpeSJ9.XNfLqCayuDisI8S9C1s1-g</string>
 </dict>
 </plist>

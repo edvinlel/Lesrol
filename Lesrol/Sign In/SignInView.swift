@@ -112,6 +112,14 @@ class SignInView: UIView {
         return view
     }()
     
+    let errorMessageLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = UIColor.TripsColor.mainRed
+        label.font = UIFont.gilroyMedium(ofSize: 12)
+        label.numberOfLines = 0
+        return label
+    }()
+    
     lazy var signinWithStackView: UIStackView = { [unowned self] in
         let stackView = UIStackView(arrangedSubviews: [self.seperatorView, self.orSigninLabel, self.seperatorTwoView])
         stackView.distribution = .fillEqually
@@ -149,7 +157,19 @@ class SignInView: UIView {
         
         /// Initialize View and Constraints
         setSubviewForAutoLayout(backgroundImage)
-        backgroundImage.setSubviewsForAutoLayout([signInLabel, emailBackground, passwordBackground, activityIndicator, signinButton, seperatorTwoView, orSigninLabel, seperatorView, facebookButton, appleButton, googleButton])
+        backgroundImage.setSubviewsForAutoLayout([signInLabel,
+                                                  emailBackground,
+                                                  passwordBackground,
+                                                  activityIndicator,
+                                                  signinButton,
+                                                  seperatorTwoView,
+                                                  orSigninLabel,
+                                                  seperatorView,
+                                                  errorMessageLabel,
+                                                  facebookButton,
+                                                  appleButton,
+                                                  googleButton])
+        
         emailBackground.setSubviewsForAutoLayout([emailTextField])
         passwordBackground.setSubviewForAutoLayout(passwordTextField)
         setContstraints()
@@ -205,6 +225,12 @@ class SignInView: UIView {
             passwordTextField.topAnchor.constraint(equalTo: passwordBackground.topAnchor, constant: 2),
             passwordTextField.rightAnchor.constraint(equalTo: passwordBackground.rightAnchor, constant: -2),
             passwordTextField.centerYAnchor.constraint(equalTo: passwordBackground.centerYAnchor, constant: 0)
+        ])
+        
+        NSLayoutConstraint.activate([
+            errorMessageLabel.topAnchor.constraint(equalTo: passwordBackground.bottomAnchor, constant: 4),
+            errorMessageLabel.leftAnchor.constraint(equalTo: passwordBackground.leftAnchor, constant: 0),
+            errorMessageLabel.rightAnchor.constraint(equalTo: passwordBackground.rightAnchor, constant: 0)
         ])
         
         NSLayoutConstraint.activate([

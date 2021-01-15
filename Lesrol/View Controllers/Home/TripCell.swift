@@ -29,15 +29,19 @@ class TripCell: UITableViewCell {
     
     let locationLabel: UILabel = {
         let label = UILabel()
-        label.text = "Staley's Club Turlock, CA"
-        label.font = UIFont.gilroyBold(ofSize: 14)
+        label.text = "Yellowstone National Park"
+        label.font = UIFont.gilroyBold(ofSize: 30)
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.minimumScaleFactor = 0.1
         label.textColor = .white
         return label
     }()
     
     let likeButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "like"), for: .normal)
+        button.setBackgroundImage(UIImage(named: "like"), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFill
         return button
     }()
     
@@ -57,7 +61,7 @@ class TripCell: UITableViewCell {
         imageView.isUserInteractionEnabled = true
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 20
-        imageView.image = UIImage(named: "staleys")
+        imageView.image = UIImage(named: "yellowstone")
         return imageView
     }()
     
@@ -79,13 +83,61 @@ class TripCell: UITableViewCell {
     let tripTitle: UILabel = {
         let label = UILabel()
         label.text = "Matt's Bachelor Party"
-        label.font = UIFont.gilroyMedium(ofSize: 20)
+        label.font = UIFont.gilroyBold(ofSize: 14)
         label.textColor = .white
-        label.text = "Who's up for a couple beers?"
+        label.text = "Yellowstone"
         label.numberOfLines = 0
         label.minimumScaleFactor = 0.1
         label.textAlignment = .left
         return label
+    }()
+    
+    let datesLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Oct 2 - Oct 16"
+        label.textColor = .white
+        label.font = UIFont.gilroyMedium(ofSize: 14)
+        return label
+    }()
+    
+    let firstFriendProfileImage: ProfileImageView = {
+        let imageView = ProfileImageView()
+        imageView.layer.borderColor = UIColor.white.cgColor
+        imageView.layer.borderWidth = 1
+        imageView.setImageView(image: UIImage(named: "edvin"))
+        return imageView
+    }()
+    
+    let secondFriendProfileImage: ProfileImageView = {
+        let imageView = ProfileImageView()
+        imageView.layer.borderColor = UIColor.white.cgColor
+        imageView.layer.borderWidth = 1
+        imageView.setImageView(image: UIImage(named: "joey"))
+        return imageView
+    }()
+    
+    let thirdFriendProfileImage: ProfileImageView = {
+        let imageView = ProfileImageView()
+        imageView.layer.borderColor = UIColor.white.cgColor
+        imageView.layer.borderWidth = 1
+        imageView.setImageView(image: UIImage(named: "jordan"))
+        return imageView
+    }()
+    
+    let remainingFriendProfileImage: ProfileImageView = {
+        let imageView = ProfileImageView()
+        imageView.backgroundColor = .white
+        imageView.label.textColor = .black
+        imageView.setLabel(text: "+4")
+        return imageView
+    }()
+    
+    lazy var groupsStackView: UIStackView = { [unowned self] in
+        let stackView = UIStackView(arrangedSubviews: [self.firstFriendProfileImage, self.secondFriendProfileImage, self.thirdFriendProfileImage, self.remainingFriendProfileImage])
+        stackView.axis = .horizontal
+        stackView.distribution = .fill
+        stackView.spacing = -10
+        return stackView
     }()
     
     let locationIcon: UIImageView = {
@@ -105,7 +157,16 @@ class TripCell: UITableViewCell {
         selectionStyle = .none
         
         setSubviewsForAutoLayout([containerView])
-        containerView.setSubviewsForAutoLayout([backgroundImage, alphaView, locationIcon, usernameLabel, profilePicture, locationLabel, tripTitle, likeButton])
+        containerView.setSubviewsForAutoLayout([backgroundImage,
+                                                alphaView,
+                                                locationIcon,
+                                                usernameLabel,
+                                                profilePicture,
+                                                locationLabel,
+                                                tripTitle,
+                                                datesLabel,
+                                                groupsStackView,
+                                                likeButton])
         
         
         setConstraints()
@@ -162,6 +223,7 @@ class TripCell: UITableViewCell {
             profilePicture.widthAnchor.constraint(equalToConstant: 60)
         ])
         
+        /// Username Label
         NSLayoutConstraint.activate([
             usernameLabel.centerYAnchor.constraint(equalTo: profilePicture.centerYAnchor, constant: 0),
             usernameLabel.leftAnchor.constraint(equalTo: profilePicture.rightAnchor, constant: 10),
@@ -171,31 +233,66 @@ class TripCell: UITableViewCell {
         NSLayoutConstraint.activate([
             likeButton.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -15),
             likeButton.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -15),
-            likeButton.widthAnchor.constraint(equalToConstant: 20),
-            likeButton.heightAnchor.constraint(equalToConstant: 20)
+            likeButton.widthAnchor.constraint(equalToConstant: 30),
+            likeButton.heightAnchor.constraint(equalToConstant: 30)
         ])
         
+      
         
-        /// Trip Title
+        /// Dates Label
         NSLayoutConstraint.activate([
-            tripTitle.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 15),
-            tripTitle.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -50),
-            tripTitle.rightAnchor.constraint(equalTo: likeButton.leftAnchor, constant: -5)
+            datesLabel.topAnchor.constraint(equalTo: locationLabel.bottomAnchor, constant: 10),
+            datesLabel.centerXAnchor.constraint(equalTo: containerView.centerXAnchor, constant: 0)
+            
         ])
         
+        /// Location Icon
         NSLayoutConstraint.activate([
-            locationIcon.topAnchor.constraint(equalTo: tripTitle.topAnchor, constant: -25),
-            locationIcon.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 15),
+            locationIcon.centerYAnchor.constraint(equalTo: locationLabel.centerYAnchor, constant: 0),
+            locationIcon.rightAnchor.constraint(equalTo: locationLabel.leftAnchor, constant: -15),
             locationIcon.widthAnchor.constraint(equalToConstant: 15),
             locationIcon.heightAnchor.constraint(equalToConstant: 10)
         ])
         
         /// Location Label
         NSLayoutConstraint.activate([
-            locationLabel.centerYAnchor.constraint(equalTo: locationIcon.centerYAnchor, constant: 0),
-            locationLabel.leftAnchor.constraint(equalTo: locationIcon.rightAnchor, constant: 15)
+            locationLabel.centerYAnchor.constraint(equalTo: containerView.centerYAnchor, constant: 0),
+            locationLabel.centerXAnchor.constraint(equalTo: containerView.centerXAnchor, constant: 0),
+            locationLabel.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 5),
+            locationLabel.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -5)
         ])
         
+        /// Trip Title
+        NSLayoutConstraint.activate([
+            tripTitle.bottomAnchor.constraint(equalTo: groupsStackView.topAnchor, constant: -20),
+            tripTitle.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 15)
+//            tripTitle.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 15),
+//            tripTitle.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -15)
+        ])
+        
+        /// Group StackView
+        NSLayoutConstraint.activate([
+            firstFriendProfileImage.widthAnchor.constraint(equalToConstant: 30),
+            firstFriendProfileImage.heightAnchor.constraint(equalToConstant: 30),
+            
+            secondFriendProfileImage.widthAnchor.constraint(equalToConstant: 30),
+            secondFriendProfileImage.widthAnchor.constraint(equalToConstant: 30),
+            
+            thirdFriendProfileImage.widthAnchor.constraint(equalToConstant: 30),
+            thirdFriendProfileImage.heightAnchor.constraint(equalToConstant: 30),
+            
+            remainingFriendProfileImage.widthAnchor.constraint(equalToConstant: 30),
+            remainingFriendProfileImage.widthAnchor.constraint(equalToConstant: 30)
+        ])
+        
+        /// Friends
+        NSLayoutConstraint.activate([
+            
+            groupsStackView.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 15),
+            groupsStackView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -15)
+//            groupsStackView.bottomAnchor.constraint(equalTo: tripTitle.topAnchor, constant: -20),
+//            groupsStackView.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 15)
+        ])
         
         
 //        /// Background Image

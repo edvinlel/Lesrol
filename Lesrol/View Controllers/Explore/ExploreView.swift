@@ -14,7 +14,7 @@ class ExploreView: UIView {
     
     let containerView: UIView = {
         let view = UIView()
-        view.backgroundColor = .red
+        view.backgroundColor = UIColor.TripsColor.background
         view.isUserInteractionEnabled = true
         
         return view
@@ -24,19 +24,21 @@ class ExploreView: UIView {
         let scrollView = UIScrollView()
         scrollView.contentInsetAdjustmentBehavior = .never
         scrollView.showsVerticalScrollIndicator = false
-        scrollView.backgroundColor = .white
+        scrollView.backgroundColor = UIColor.TripsColor.background
         scrollView.contentSize.height = 2000
         return scrollView
     }()
     
-    let searchIcon: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "search_selected")
-        imageView.contentMode = .scaleAspectFill
-        return imageView
+    
+    let searchBar: UIImageView = {
+        let button = UIImageView()
+        button.contentMode = .scaleAspectFill
+        button.image = UIImage(named: "searchButton")
+        button.isUserInteractionEnabled = true
+        return button
     }()
     
-    let travelersLabel: UILabel = {
+    let popularDestinationsLabel: UILabel = {
         let label = UILabel()
         label.text = "Popular trips from travelers"
         label.textColor = .black
@@ -44,15 +46,22 @@ class ExploreView: UIView {
         return label
     }()
     
-    lazy var travelersCollectionView: UICollectionView = {
+    lazy var popularDestinationsCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.sectionInset = UIEdgeInsets(top: 5, left: 30, bottom: 5, right: 5)
+        layout.sectionInset = UIEdgeInsets(top: 5, left: 40, bottom: 5, right: 5)
         let collectionView = UICollectionView(frame: frame, collectionViewLayout: layout)
         collectionView.showsHorizontalScrollIndicator = false
-        collectionView.backgroundColor = UIColor.TripsColor.background
-        layout.minimumLineSpacing = 20
+        collectionView.backgroundColor = .clear
+        layout.minimumLineSpacing = 10
         return collectionView
+    }()
+    
+    let adSpot: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.image = UIImage(named: "disney_ad")
+        return imageView
     }()
     
     // MARK: Initializer
@@ -64,7 +73,13 @@ class ExploreView: UIView {
         
         setSubviewForAutoLayout(scrollView)
         scrollView.setSubviewForAutoLayout(containerView)
-        containerView.setSubviewsForAutoLayout([searchIcon])
+        containerView.setSubviewsForAutoLayout([
+            searchBar,
+            popularDestinationsLabel,
+            popularDestinationsCollectionView,
+            adSpot
+        
+        ])
         
         setConstraints()
     }
@@ -94,11 +109,31 @@ class ExploreView: UIView {
             containerView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 1)
         ])
         
+        /// Search bar
         NSLayoutConstraint.activate([
-            searchIcon.topAnchor.constraint(equalTo: containerView.safeAreaLayoutGuide.topAnchor, constant: 20),
-            searchIcon.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -20),
-            searchIcon.heightAnchor.constraint(equalToConstant: 20),
-            searchIcon.widthAnchor.constraint(equalToConstant: 20)
+            searchBar.centerXAnchor.constraint(equalTo: containerView.centerXAnchor, constant: 0),
+            searchBar.topAnchor.constraint(equalTo: containerView.safeAreaLayoutGuide.topAnchor, constant: 50),
+            searchBar.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 40),
+            searchBar.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -40)
+        ])
+        
+        /// Travelers Label and Collection View
+        NSLayoutConstraint.activate([
+            popularDestinationsLabel.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 40),
+            popularDestinationsLabel.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 40),
+            
+            popularDestinationsCollectionView.topAnchor.constraint(equalTo: popularDestinationsLabel.bottomAnchor, constant: 5),
+            popularDestinationsCollectionView.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 0),
+            popularDestinationsCollectionView.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: 0),
+            popularDestinationsCollectionView.heightAnchor.constraint(equalToConstant: 200)
+        ])
+        
+        /// Ad Spot
+        NSLayoutConstraint.activate([
+            adSpot.topAnchor.constraint(equalTo: popularDestinationsCollectionView.bottomAnchor, constant: 0),
+            adSpot.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 20),
+            adSpot.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -10),
+            adSpot.heightAnchor.constraint(equalToConstant: 265)
         ])
     }
 }

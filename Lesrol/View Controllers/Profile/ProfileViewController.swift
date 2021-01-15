@@ -9,13 +9,28 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
+    
+    weak var profileView: ProfileView! { return self.view as? ProfileView }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        view = ProfileView()
+        
+       
+        profileView.logoutButton.addTarget(self, action: #selector(logoutButtonPressed), for: .touchUpInside)
     }
     
+    @objc private func logoutButtonPressed() {
+        FirebaseLayer.logOut { (success, error) in
+            if success {
+                let landingViewController = LandingViewController()
+                landingViewController.modalPresentationStyle = .fullScreen
+                self.present(landingViewController, animated: true, completion: nil)
+            }
+        }
+    }
 
     /*
     // MARK: - Navigation

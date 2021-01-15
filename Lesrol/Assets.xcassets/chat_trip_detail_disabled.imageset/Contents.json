@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "chat_trip_detail_disabled.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "@2xchat_trip_detail_disabled.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "@3xchat_trip_detail_disabled.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -87,21 +87,21 @@ class HomeView: UIView {
             compassImage.widthAnchor.constraint(equalToConstant: 30)
         ])
            
-           /// Divider View
-           NSLayoutConstraint.activate([
-               dividerView.bottomAnchor.constraint(equalTo: spaceView.bottomAnchor, constant: 0),
-               dividerView.leftAnchor.constraint(equalTo: spaceView.leftAnchor, constant: 0),
-               dividerView.rightAnchor.constraint(equalTo: spaceView.rightAnchor, constant: 0),
-               dividerView.heightAnchor.constraint(equalToConstant: 1)
-           ])
-           
-           /// UpcomigTableView
-           NSLayoutConstraint.activate([
-               tableView.topAnchor.constraint(equalTo: spaceView.bottomAnchor, constant: 0),
-               tableView.leftAnchor.constraint(equalTo: leftAnchor, constant: 0),
-               tableView.rightAnchor.constraint(equalTo: rightAnchor, constant: 0),
-               tableView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0)
-           ])
+       /// Divider View
+       NSLayoutConstraint.activate([
+           dividerView.bottomAnchor.constraint(equalTo: spaceView.bottomAnchor, constant: 0),
+           dividerView.leftAnchor.constraint(equalTo: spaceView.leftAnchor, constant: 0),
+           dividerView.rightAnchor.constraint(equalTo: spaceView.rightAnchor, constant: 0),
+           dividerView.heightAnchor.constraint(equalToConstant: 1)
+       ])
+       
+       /// UpcomigTableView
+       NSLayoutConstraint.activate([
+           tableView.topAnchor.constraint(equalTo: spaceView.bottomAnchor, constant: 0),
+           tableView.leftAnchor.constraint(equalTo: leftAnchor, constant: 0),
+           tableView.rightAnchor.constraint(equalTo: rightAnchor, constant: 0),
+           tableView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0)
+       ])
        }
     
 }

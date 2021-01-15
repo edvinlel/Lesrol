@@ -72,6 +72,8 @@ class YourTripCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
+    
+    
     func hideView() {
         imageView.isHidden = true
         alphaView.isHidden = true
